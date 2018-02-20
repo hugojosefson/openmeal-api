@@ -1,7 +1,7 @@
 {
-  "name": "@hugojosefson/example-cli",
-  "version": "1.0.2",
-  "description": "Example Node.js CLI app.",
+  "name": "@hugojosefson/skolmaten-api",
+  "version": "0.0.0",
+  "description": "Unofficial API module for accessing school lunch menues from skolmaten.se",
   "main": "src/api-commonjs.js",
   "module": "src/api.mjs",
   "files": [
@@ -28,15 +28,15 @@
       "git add"
     ]
   },
-  "repository": "hugojosefson/nodejs-example-cli",
+  "repository": "hugojosefson/skolmaten-api",
   "keywords": [
-    "node",
-    "nodejs",
-    "cli",
-    "bin",
-    "esmodule",
-    "example",
-    "template"
+    "skolmaten",
+    "skolmaten.se",
+    "api",
+    "dinskolmat",
+    "skollunch",
+    "lunch",
+    "skola"
   ],
   "author": "Hugo Josefson <hugo@josefson.org> (https://www.hugojosefson.com/)",
   "license": "ISC",
