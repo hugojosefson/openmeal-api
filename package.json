@@ -1,7 +1,7 @@
 {
   "name": "@hugojosefson/skolmaten-api",
   "version": "0.0.0",
-  "description": "Unofficial API module for accessing school lunch menues from skolmaten.se",
+  "description": "Unofficial API module for accessing school lunch menus from skolmaten.se",
   "main": "src/api-commonjs.js",
   "module": "src/api.mjs",
   "files": [
@@ -9,10 +9,10 @@
     "src"
   ],
   "bin": {
-    "example-cli": "bin/example-cli.js"
+    "skolmaten-api": "bin/skolmaten-api.js"
   },
   "scripts": {
-    "start": "bin/example-cli.js You",
+    "start": "bin/skolmaten-api.js --help",
     "test": "run-s lint mocha",
     "mocha": "mocha --require @std/esm 'test/**/*-test.{m,}js'",
     "mocha-watch": "mocha --watch --require @std/esm 'test/**/*-test.{m,}js'",

@@ -1,35 +1,19 @@
-# Node.js example CLI app
+# Unofficial API for skolmaten.se
 
-[![Build Status](https://travis-ci.org/hugojosefson/nodejs-example-cli.svg?branch=master)](https://travis-ci.org/hugojosefson/nodejs-example-cli)
-[![npm page](https://img.shields.io/npm/v/@hugojosefson/example-cli.svg)](https://npmjs.com/package/@hugojosefson/example-cli)
-[![License ISC](https://img.shields.io/npm/l/@hugojosefson/example-cli.svg)](https://tldrlegal.com/license/-isc-license)
+[![Build Status](https://travis-ci.org/hugojosefson/skolmaten-api.svg?branch=master)](https://travis-ci.org/hugojosefson/skolmaten-api)
+[![npm page](https://img.shields.io/npm/v/@hugojosefson/skolmaten-api.svg)](https://npmjs.com/package/@hugojosefson/skolmaten-api)
+[![License ISC](https://img.shields.io/npm/l/@hugojosefson/skolmaten-api.svg)](https://tldrlegal.com/license/-isc-license)
 [![SemVer 2.0.0](https://img.shields.io/badge/SemVer-2.0.0-lightgrey.svg)](http://semver.org/spec/v2.0.0.html)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/nodejs-example-cli/inbox.svg)](https://waffle.io/hugojosefson/nodejs-example-cli)
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/nodejs-example-cli/to%20do.svg)](https://waffle.io/hugojosefson/nodejs-example-cli)
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/nodejs-example-cli/in%20progress.svg)](https://waffle.io/hugojosefson/nodejs-example-cli)
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/nodejs-example-cli/done.svg)](https://waffle.io/hugojosefson/nodejs-example-cli)
+[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/skolmaten-api/inbox.svg)](https://waffle.io/hugojosefson/skolmaten-api)
+[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/skolmaten-api/to%20do.svg)](https://waffle.io/hugojosefson/skolmaten-api)
+[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/skolmaten-api/in%20progress.svg)](https://waffle.io/hugojosefson/skolmaten-api)
+[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/skolmaten-api/done.svg)](https://waffle.io/hugojosefson/skolmaten-api)
 
 ## Introduction
 
-This is a simple CLI app in Node.js, using ES Modules.
-
-### Using as a template
-
-_To use this project as a template for your own project, you can do this:_
-
-```bash
-mkdir my-cli
-cd my-cli
-git init
-curl https://codeload.github.com/hugojosefson/nodejs-example-cli/tar.gz/master | tar xzv --strip-components=1
-git add --all
-git commit -m 'Add template files from nodejs-example-cli.'
-yarn
-```
-
-_Then edit `package.json` and go on developing!_
+This is an unofficial API module for accessing school lunch menus from [skolmaten.se](https://skolmaten.se/).
 
 ## Prerequisite
 
@@ -44,16 +28,16 @@ nvm install stable
 ## Installation
 
 ```bash
-npm install -g @hugojosefson/example-cli
+npm install -g @hugojosefson/skolmaten-api
 ```
 
-## Usage
+## Usage on CLI
 
 ```bash
-example-cli "Your Name"
+skolmaten-api --help
 ```
 
-Will say hello to you.
+Will let you know of available parameters.
 
 ## Programmatic access
 
