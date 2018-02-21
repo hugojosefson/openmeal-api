@@ -28,23 +28,17 @@ Recommended to install latest via [nvm](https://github.com/creationix/nvm#readme
 nvm install stable
 ```
 
-## Installation
+## Installation in a project
 
 ```bash
-npm install -g @hugojosefson/openmeal-api
+yarn add @hugojosefson/openmeal-api
+ # or
+npm install --save @hugojosefson/openmeal-api
 ```
-
-## Usage on CLI
-
-```bash
-openmeal-api
-```
-
-Prints distributors.
 
 ## Programmatic access
 
-You can also `import` or `require` the module, and use its exported functions programmatically.
+It is recommended to `import` or `require` the module, and use its exported functions programmatically.
 
 ### API
 
@@ -85,3 +79,13 @@ Returns distributors from a data provider.
 -   `data` **{baseUrl}** provider object to fetch distributors from.
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>data</code> property of the response from the server.
+
+## Usage on CLI
+
+You can also try it from the command-line.
+
+```bash
+./node_modules/.bin/openmeal-api
+```
+
+Prints usage information for the CLI.
