@@ -1,19 +1,22 @@
-# Unofficial API for skolmaten.se
+# Unofficial API for Open Meal Information
 
-[![Build Status](https://travis-ci.org/hugojosefson/skolmaten-api.svg?branch=master)](https://travis-ci.org/hugojosefson/skolmaten-api)
-[![npm page](https://img.shields.io/npm/v/@hugojosefson/skolmaten-api.svg)](https://npmjs.com/package/@hugojosefson/skolmaten-api)
-[![License ISC](https://img.shields.io/npm/l/@hugojosefson/skolmaten-api.svg)](https://tldrlegal.com/license/-isc-license)
+[![Build Status](https://travis-ci.org/hugojosefson/openmeal-api.svg?branch=master)](https://travis-ci.org/hugojosefson/openmeal-api)
+[![npm page](https://img.shields.io/npm/v/@hugojosefson/openmeal-api.svg)](https://npmjs.com/package/@hugojosefson/openmeal-api)
+[![License ISC](https://img.shields.io/npm/l/@hugojosefson/openmeal-api.svg)](https://tldrlegal.com/license/-isc-license)
 [![SemVer 2.0.0](https://img.shields.io/badge/SemVer-2.0.0-lightgrey.svg)](http://semver.org/spec/v2.0.0.html)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/skolmaten-api/inbox.svg)](https://waffle.io/hugojosefson/skolmaten-api)
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/skolmaten-api/to%20do.svg)](https://waffle.io/hugojosefson/skolmaten-api)
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/skolmaten-api/in%20progress.svg)](https://waffle.io/hugojosefson/skolmaten-api)
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/skolmaten-api/done.svg)](https://waffle.io/hugojosefson/skolmaten-api)
+[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/openmeal-api/inbox.svg)](https://waffle.io/hugojosefson/openmeal-api)
+[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/openmeal-api/to%20do.svg)](https://waffle.io/hugojosefson/openmeal-api)
+[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/openmeal-api/in%20progress.svg)](https://waffle.io/hugojosefson/openmeal-api)
+[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/openmeal-api/done.svg)](https://waffle.io/hugojosefson/openmeal-api)
 
 ## Introduction
 
-This is an unofficial API module for accessing school lunch menus from [skolmaten.se](https://skolmaten.se/).
+This is an unofficial API module for accessing Swedish school lunch
+menus from [skolmaten.se](https://skolmaten.se/) via Open Meal
+Information as specified at
+<https://orebrokommun.github.io/Open-Meal-Information/>
 
 ## Prerequisite
 
@@ -28,16 +31,16 @@ nvm install stable
 ## Installation
 
 ```bash
-npm install -g @hugojosefson/skolmaten-api
+npm install -g @hugojosefson/openmeal-api
 ```
 
 ## Usage on CLI
 
 ```bash
-skolmaten-api
+openmeal-api
 ```
 
-Prints provinces.
+Prints distributors.
 
 ## Programmatic access
 
@@ -49,10 +52,36 @@ You can also `import` or `require` the module, and use its exported functions pr
 
 ##### Table of Contents
 
--   [getProvinces](#getprovinces)
+-   [getDataProviders](#getdataproviders)
+-   [getDataProviderSkolmaten](#getdataproviderskolmaten)
+-   [getDistributors](#getdistributors)
 
-#### getProvinces
+#### getDataProviders
 
-Returns provinces, districts, schools.
+Returns data providers.
 
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>provinces</code> property of the response from the server.
+**Parameters**
+
+-   `url` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** for the data providers json. Defaults to <https://raw.githubusercontent.com/Orebrokommun/Open-Meal-Information/master/dataproviders.json> as per <https://orebrokommun.github.io/Open-Meal-Information/doc/list-data-providers.html>
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>data</code> property of the response from the server.
+
+#### getDataProviderSkolmaten
+
+Returns the data provider with name === 'Skolmaten'.
+
+**Parameters**
+
+-   `url` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** for the data providers json. Defaults to <https://raw.githubusercontent.com/Orebrokommun/Open-Meal-Information/master/dataproviders.json> as per <https://orebrokommun.github.io/Open-Meal-Information/doc/list-data-providers.html>
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>data</code> property of the response from the server.
+
+#### getDistributors
+
+Returns distributors from a data provider.
+
+**Parameters**
+
+-   `data` **{baseUrl}** provider object to fetch distributors from.
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>data</code> property of the response from the server.

@@ -1,5 +1,5 @@
 {
-  "name": "@hugojosefson/skolmaten-api",
+  "name": "@hugojosefson/openmeal-api",
   "version": "0.0.0",
   "description": "Unofficial API module for accessing school lunch menus from skolmaten.se",
   "main": "src/api-commonjs.js",
@@ -9,10 +9,10 @@
     "src"
   ],
   "bin": {
-    "skolmaten-api": "bin/skolmaten-api.js"
+    "openmeal-api": "bin/openmeal-api.js"
   },
   "scripts": {
-    "start": "bin/skolmaten-api.js",
+    "start": "bin/openmeal-api.js",
     "test": "run-s lint mocha",
     "mocha": "mocha --require @std/esm 'test/**/*-test.{m,}js'",
     "mocha-watch": "mocha --watch --require @std/esm 'test/**/*-test.{m,}js'",
@@ -28,8 +28,11 @@
       "git add"
     ]
   },
-  "repository": "hugojosefson/skolmaten-api",
+  "repository": "hugojosefson/openmeal-api",
   "keywords": [
+    "openmeal",
+    "open meal",
+    "meal",
     "skolmaten",
     "skolmaten.se",
     "api",
@@ -59,6 +62,7 @@
   "dependencies": {
     "@std/esm": "^0.22.0",
     "engine-check": "^1.0.1",
+    "ramda": "^0.25.0",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
   }
