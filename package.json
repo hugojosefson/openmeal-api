@@ -12,7 +12,7 @@
     "skolmaten-api": "bin/skolmaten-api.js"
   },
   "scripts": {
-    "start": "bin/skolmaten-api.js --help",
+    "start": "bin/skolmaten-api.js",
     "test": "run-s lint mocha",
     "mocha": "mocha --require @std/esm 'test/**/*-test.{m,}js'",
     "mocha-watch": "mocha --watch --require @std/esm 'test/**/*-test.{m,}js'",
@@ -58,6 +58,8 @@
   },
   "dependencies": {
     "@std/esm": "^0.22.0",
-    "engine-check": "^1.0.1"
+    "engine-check": "^1.0.1",
+    "request": "^2.83.0",
+    "request-promise-native": "^1.0.5"
   }
 }

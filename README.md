@@ -34,10 +34,10 @@ npm install -g @hugojosefson/skolmaten-api
 ## Usage on CLI
 
 ```bash
-skolmaten-api --help
+skolmaten-api
 ```
 
-Will let you know of available parameters.
+Prints provinces.
 
 ## Programmatic access
 
@@ -49,25 +49,10 @@ You can also `import` or `require` the module, and use its exported functions pr
 
 ##### Table of Contents
 
--   [generateGreeting](#generategreeting)
--   [identity](#identity)
+-   [getProvinces](#getprovinces)
 
-#### generateGreeting
+#### getProvinces
 
-Generates a greeting
+Returns provinces, districts, schools.
 
-**Parameters**
-
--   `whom` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Whom to greet.
-
-Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** A Promise of a greeting.
-
-#### identity
-
-Returns the supplied argument.
-
-**Parameters**
-
--   `a` **any** Any argument.
-
-Returns **any** The argument a.
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>provinces</code> property of the response from the server.

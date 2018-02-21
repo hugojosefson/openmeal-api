@@ -1,17 +1,7 @@
 /**
- * Generates a greeting
+ * Returns provinces, districts, schools.
  *
- * @param {String} whom - Whom to greet.
- * @returns {Promise.<String>} A Promise of a greeting.
- * @name generateGreeting
+ * @returns {Promise} A Promise of the <code>provinces</code> property of the response from the server.
+ * @name getProvinces
  */
-export { default as generateGreeting } from './generate-greeting'
-
-/**
- * Returns the supplied argument.
- *
- * @param {*} a - Any argument.
- * @returns {*} The argument a.
- * @name identity
- */
-export { default as identity } from './identity'
+export { default as getProvinces } from './get-provinces'
