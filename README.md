@@ -49,6 +49,7 @@ It is recommended to `import` or `require` the module, and use its exported func
 -   [getDataProviders](#getdataproviders)
 -   [getDataProviderSkolmaten](#getdataproviderskolmaten)
 -   [getDistributors](#getdistributors)
+-   [filterDistributors](#filterdistributors)
 
 #### getDataProviders
 
@@ -79,6 +80,18 @@ Returns distributors from a data provider.
 -   `data` **{baseUrl}** provider object to fetch distributors from.
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>data</code> property of the response from the server.
+
+#### filterDistributors
+
+Filters distributors based on partial name and/or partial address.
+
+**Parameters**
+
+-   `distributors` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** current distributors to filter, for example from <code>getDistributors</code> or the result of previous call to this function.
+-   `name` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** if specified, only include distributors in result which contain this string in their <code>name</code>, case insensitively.
+-   `address` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** if specified, only include distributors in result which contain this string in their <code>addressRegion</code> or <code>addressLocality</code>, case insensitively.
+
+Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** array of distributors matching the criteria.
 
 ## Usage on CLI
 
