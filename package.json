@@ -43,9 +43,9 @@
   ],
   "author": "Hugo Josefson <hugo@josefson.org> (https://www.hugojosefson.com/)",
   "license": "ISC",
-  "comment-engines.node": "Not using babel, code seems to work from v6.0.0 and up.",
+  "comment-engines.node": "Not using babel, code seems to work from v6.2.2 and up.",
   "engines": {
-    "node": ">=6.0.0"
+    "node": ">=6.2.2"
   },
   "comment-@std/esm.cjs": "Allow destructuring import from common-js modules.",
   "@std/esm": {
