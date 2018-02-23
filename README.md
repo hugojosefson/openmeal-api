@@ -20,7 +20,7 @@ Information as specified at
 
 ## Prerequisite
 
-Node.js, at least `v4.0.0`.
+Node.js, at least `v6.0.0`.
 
 Recommended to install latest via [nvm](https://github.com/creationix/nvm#readme):
 
