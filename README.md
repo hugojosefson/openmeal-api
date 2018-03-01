@@ -16,7 +16,7 @@
 This is an unofficial API module for accessing Swedish school lunch
 menus from [skolmaten.se](https://skolmaten.se/) via Open Meal
 Information as specified at
-<https://orebrokommun.github.io/Open-Meal-Information/>
+<https://orebrokommun.github.io/Open-Meal-Information/>.
 
 ## Prerequisite
 
@@ -90,7 +90,7 @@ Filters distributors based on partial name and/or partial address.
 
 **Parameters**
 
--   `options` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+-   `options` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     -   `options.distributors` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** current distributors to filter, for example from <code>getDistributors</code> or the result of previous call to this function.
     -   `options.name` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** if specified, only include distributors in result which contain this string in their <code>name</code>, case insensitively.
     -   `options.address` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** if specified, only include distributors in result which contain this string in their <code>addressRegion</code> or <code>addressLocality</code>, case insensitively.
@@ -103,7 +103,7 @@ Fetches meals for a distributor.
 
 **Parameters**
 
--   `options` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+-   `options` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     -   `options.dataprovider` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** data provider object to fetch distributors from.
         -   `options.dataprovider.baseUrl` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** <code>baseUrl</code> of the data provider.
     -   `options.distributor` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** distributor whose meals to fetch.
