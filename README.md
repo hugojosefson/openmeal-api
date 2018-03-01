@@ -50,6 +50,8 @@ It is recommended to `import` or `require` the module, and use its exported func
 -   [getDataProviderSkolmaten](#getdataproviderskolmaten)
 -   [getDistributors](#getdistributors)
 -   [filterDistributors](#filterdistributors)
+-   [getMeals](#getmeals)
+-   [extractOnlyMeals](#extractonlymeals)
 
 #### getDataProviders
 
@@ -57,17 +59,17 @@ Returns data providers.
 
 **Parameters**
 
--   `url` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** for the data providers json. Defaults to <https://raw.githubusercontent.com/Orebrokommun/Open-Meal-Information/master/dataproviders.json> as per <https://orebrokommun.github.io/Open-Meal-Information/doc/list-data-providers.html>
+-   `dataprovidersJsonUrl` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** url for the data providers json. Defaults to <https://raw.githubusercontent.com/Orebrokommun/Open-Meal-Information/master/dataproviders.json> as per <https://orebrokommun.github.io/Open-Meal-Information/doc/list-data-providers.html>
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>data</code> property of the response from the server.
 
 #### getDataProviderSkolmaten
 
-Returns the data provider with name === 'Skolmaten'.
+Returns the data provider with <code>name === 'Skolmaten'</code>.
 
 **Parameters**
 
--   `url` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** for the data providers json. Defaults to <https://raw.githubusercontent.com/Orebrokommun/Open-Meal-Information/master/dataproviders.json> as per <https://orebrokommun.github.io/Open-Meal-Information/doc/list-data-providers.html>
+-   `dataprovidersJsonUrl` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** url for the data providers json. Defaults to <https://raw.githubusercontent.com/Orebrokommun/Open-Meal-Information/master/dataproviders.json> as per <https://orebrokommun.github.io/Open-Meal-Information/doc/list-data-providers.html>
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>data</code> property of the response from the server.
 
@@ -77,7 +79,8 @@ Returns distributors from a data provider.
 
 **Parameters**
 
--   `data` **{baseUrl}** provider object to fetch distributors from.
+-   `dataprovider` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** data provider object to fetch distributors from.
+    -   `dataprovider.baseUrl` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** <code>baseUrl</code> of the data provider.
 
 Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>data</code> property of the response from the server.
 
@@ -92,7 +95,33 @@ Filters distributors based on partial name and/or partial address.
     -   `options.name` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** if specified, only include distributors in result which contain this string in their <code>name</code>, case insensitively.
     -   `options.address` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** if specified, only include distributors in result which contain this string in their <code>addressRegion</code> or <code>addressLocality</code>, case insensitively.
 
-Returns **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** array of distributors matching the criteria.
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)>** A Promise of an array of distributors matching the criteria.
+
+#### getMeals
+
+Fetches meals for a distributor.
+
+**Parameters**
+
+-   `options` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
+    -   `options.dataprovider` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** data provider object to fetch distributors from.
+        -   `options.dataprovider.baseUrl` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** <code>baseUrl</code> of the data provider.
+    -   `options.distributor` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** distributor whose meals to fetch.
+        -   `options.distributor.distributorID` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** the distributor's ID.
+    -   `options.startDate` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** start date on the form <code>YYYY-MM-DD</code>.
+    -   `options.endDate` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) \| [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** end date on the form <code>YYYY-MM-DD</code>.
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)** A Promise of the <code>data</code> property of the response from the server.
+
+#### extractOnlyMeals
+
+Extracts an array of only meals objects from a response from <code>getMeals()</code>.
+
+**Parameters**
+
+-   `response` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** response from calling <code>getMeals()</code>.
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)>** A Promise of an array containing all meal objects from the supplied response.
 
 ## Usage on CLI
 

@@ -1,0 +1,71 @@
+[
+  {
+    "date": "2018-03-01T00:00:00",
+    "lang": "sv",
+    "name": "Lunch",
+    "courses": [
+      {
+        "name": "Fiskgryta med tomat och koriander serveras med potatis"
+      },
+      {
+        "name": "Currygryta Taj Mahal serveras med potatis"
+      }
+    ]
+  },
+  {
+    "date": "2018-03-02T00:00:00",
+    "lang": "sv",
+    "name": "Lunch",
+    "courses": [
+      {
+        "name": "Italiensk makaronigratäng"
+      }
+    ]
+  },
+  {
+    "date": "2018-03-05T00:00:00",
+    "lang": "sv",
+    "name": "Lunch",
+    "courses": [
+      {
+        "name": "Ängsköttbullar, gräddsås, potatis, smörgåsgurka, lingon"
+      },
+      {
+        "name": "Morotsbollar, gräddsås, potatis, smörgåsgurka, lingon"
+      }
+    ]
+  },
+  {
+    "date": "2018-03-06T00:00:00",
+    "lang": "sv",
+    "name": "Lunch",
+    "courses": [
+      {
+        "name": "Broccolisoppa, bröd och pålägg"
+      }
+    ]
+  },
+  {
+    "date": "2018-03-07T00:00:00",
+    "lang": "sv",
+    "name": "Lunch",
+    "courses": [
+      {
+        "name": "Fiskburgare med bröd och dressing, klyftpotatis"
+      },
+      {
+        "name": "Grönsaksburgare med bröd och dressing, klyftpotatis"
+      }
+    ]
+  },
+  {
+    "date": "2018-03-08T00:00:00",
+    "lang": "sv",
+    "name": "Lunch",
+    "courses": [
+      {
+        "name": "Schnitzel med tomatsås och ris"
+      }
+    ]
+  }
+]

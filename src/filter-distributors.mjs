@@ -9,6 +9,8 @@ const addressIncludes =
       l(addressRegion).includes(l(partialAddress)) ||
         l(addressLocality).includes(l(partialAddress))
 
-export default ({distributors, name, address}) => distributors
+const filterDistributors = ({distributors, name, address}) => distributors
   .filter(distributor => (typeof name === 'undefined' ? true : stringIncludes(distributor.name)(name)))
   .filter(distributor => (typeof address === 'undefined' ? true : addressIncludes(distributor.address)(address)))
+
+export default args => Promise.resolve(filterDistributors(args))

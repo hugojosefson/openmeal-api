@@ -1,8 +1,22 @@
-import {basename} from 'path'
-import {getDataProviders, getDistributors, getDataProviderSkolmaten} from './api'
+import {basename, relative} from 'path'
+import {
+  getDataProviders,
+  getDistributors,
+  getDataProviderSkolmaten,
+  filterDistributors,
+  getMeals,
+  extractOnlyMeals
+} from './api'
+
+const usageMessage = proc => `
+Usage: ${basename(proc.argv[1])} [dataproviders|distributors|meals]
+
+Please see ${relative(proc.cwd(), __filename)} for hard-coded example options.
+`
 
 const usageAndQuit = () => {
-  console.error(`Usage: ${basename(process.argv[1])} [dataproviders|distributors]`)
+  const message = usageMessage(process)
+  console.error(message)
   process.exit(1)
 }
 
@@ -18,6 +32,14 @@ const action = () => {
   } else if (command === 'distributors') {
     return getDataProviderSkolmaten()
       .then(getDistributors)
+  } else if (command === 'meals') {
+    return getDataProviderSkolmaten()
+      .then(
+        skolmaten => getDistributors(skolmaten)
+          .then(distributors => filterDistributors({distributors, name: 'Kungshög', address: 'Malmö'}))
+          .then(distributors => getMeals({dataprovider: skolmaten, distributor: distributors[0]}))
+          .then(extractOnlyMeals)
+      )
   } else {
     usageAndQuit()
   }

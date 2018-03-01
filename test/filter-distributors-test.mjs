@@ -2,8 +2,8 @@
 
 import assert from 'assert'
 
-import distributors from './distributors.json'
-import {filterDistributors} from '../src/api'
+import distributors from './fixtures/distributors.json'
+import {filterDistributors, getDataProviders} from '../src/api'
 
 const j = o => JSON.stringify(o)
 
@@ -17,7 +17,13 @@ describe('filter-distributors', () => {
     })
   })
 
-  it('returns all if no criteria', () => assert.deepEqual(distributors, filterDistributors({distributors})))
+  it('should return a Promise when called', () =>
+    assert.ok(typeof getDataProviders().then === 'function')
+  )
+
+  it('resolves to all if no criteria', () => filterDistributors({distributors}).then(actual => {
+    assert.deepEqual(distributors, actual)
+  }))
 
   const pairs = [
     [1, 'Abrahamsberg'],
@@ -29,6 +35,7 @@ describe('filter-distributors', () => {
     [684, undefined, 'skåne'],
     [3, 'alléskolan', 'skåne'],
     [3, 'alléskolan', 'skån'],
+    [1, 'kungshög', 'malmö'],
     [5447],
     [88, 'information'] // TODO: how should we really handle these?
   ]
@@ -36,8 +43,10 @@ describe('filter-distributors', () => {
   pairs.forEach(
     ([count, name, address]) =>
       it(
-        `returns ${count} if filtered by ${j({name, address})}`,
-        () => assert.equal(count, filterDistributors({distributors, name, address}).length)
+        `resolves to ${count} if filtered by ${j({name, address})}`,
+        () => filterDistributors({distributors, name, address}).then(actual => {
+          assert.equal(count, actual.length)
+        })
       )
   )
 })
