@@ -8,10 +8,15 @@ import {
   extractOnlyMeals
 } from './api'
 
+const HARDCODED_DISTRIBUTORS_FILTER = {
+  name: 'Kungshög',
+  address: 'Malmö'
+}
+
 const usageMessage = proc => `
 Usage: ${basename(proc.argv[1])} [dataproviders|distributors|meals]
 
-Please see ${relative(proc.cwd(), __filename)} for hard-coded example options.
+Please see ${relative(proc.cwd(), __filename)} for any hard-coded filters when fetching meals.
 `
 
 const usageAndQuit = () => {
@@ -36,7 +41,7 @@ const action = () => {
     return getDataProviderSkolmaten()
       .then(
         skolmaten => getDistributors(skolmaten)
-          .then(distributors => filterDistributors({distributors, name: 'Kungshög', address: 'Malmö'}))
+          .then(distributors => filterDistributors({distributors, ...HARDCODED_DISTRIBUTORS_FILTER}))
           .then(distributors => getMeals({dataprovider: skolmaten, distributor: distributors[0]}))
           .then(extractOnlyMeals)
       )
