@@ -1,7 +1,7 @@
 {
   "name": "@hugojosefson/openmeal-api",
   "version": "0.0.0",
-  "description": "Unofficial API module for accessing school lunch menus from skolmaten.se",
+  "description": "API module for accessing school lunch menus from skolmaten.se",
   "main": "src/api-commonjs.js",
   "module": "src/api.mjs",
   "files": [
