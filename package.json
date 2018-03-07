@@ -48,9 +48,7 @@
     "node": ">=6.2.2"
   },
   "comment-@std/esm.cjs": "Allow destructuring import from common-js modules.",
-  "@std/esm": {
-    "cjs": true
-  },
+  "@std/esm": "cjs",
   "devDependencies": {
     "documentation": "^5.4.0",
     "husky": "^0.14.3",
@@ -60,7 +58,7 @@
     "standard": "^11.0.0"
   },
   "dependencies": {
-    "@std/esm": "^0.22.0",
+    "@std/esm": "^0.25.2",
     "engine-check": "^1.0.1",
     "ramda": "^0.25.0",
     "request": "^2.83.0",
