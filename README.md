@@ -6,11 +6,6 @@
 [![SemVer 2.0.0](https://img.shields.io/badge/SemVer-2.0.0-lightgrey.svg)](http://semver.org/spec/v2.0.0.html)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/openmeal-api/inbox.svg)](https://waffle.io/hugojosefson/openmeal-api)
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/openmeal-api/to%20do.svg)](https://waffle.io/hugojosefson/openmeal-api)
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/openmeal-api/in%20progress.svg)](https://waffle.io/hugojosefson/openmeal-api)
-[![Waffle.io](https://img.shields.io/waffle/label/hugojosefson/openmeal-api/done.svg)](https://waffle.io/hugojosefson/openmeal-api)
-
 ## Introduction
 
 This is an unofficial API module for accessing Swedish school lunch
