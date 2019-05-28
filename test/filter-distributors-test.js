@@ -3,7 +3,7 @@
 import assert from 'assert'
 
 import distributors from './fixtures/distributors.json'
-import {filterDistributors, getDataProviders} from '../src/api'
+import { filterDistributors, getDataProviders } from '../src/api'
 
 const j = o => JSON.stringify(o)
 
@@ -21,8 +21,8 @@ describe('filter-distributors', () => {
     assert.ok(typeof getDataProviders().then === 'function')
   )
 
-  it('resolves to all if no criteria', () => filterDistributors({distributors}).then(actual => {
-    assert.deepEqual(distributors, actual)
+  it('resolves to all if no criteria', () => filterDistributors({ distributors }).then(actual => {
+    assert.strict.deepEqual(distributors, actual)
   }))
 
   const pairs = [
@@ -43,9 +43,9 @@ describe('filter-distributors', () => {
   pairs.forEach(
     ([count, name, address]) =>
       it(
-        `resolves to ${count} if filtered by ${j({name, address})}`,
-        () => filterDistributors({distributors, name, address}).then(actual => {
-          assert.equal(count, actual.length)
+        `resolves to ${count} if filtered by ${j({ name, address })}`,
+        () => filterDistributors({ distributors, name, address }).then(actual => {
+          assert.strict.equal(count, actual.length)
         })
       )
   )

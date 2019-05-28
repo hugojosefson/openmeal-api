@@ -42,17 +42,23 @@ It is recommended to `import` or `require` the module, and use its exported func
 ##### Table of Contents
 
 -   [getDataProviders](#getdataproviders)
+    -   [Parameters](#parameters)
 -   [getDataProviderSkolmaten](#getdataproviderskolmaten)
+    -   [Parameters](#parameters-1)
 -   [getDistributors](#getdistributors)
+    -   [Parameters](#parameters-2)
 -   [filterDistributors](#filterdistributors)
+    -   [Parameters](#parameters-3)
 -   [getMeals](#getmeals)
+    -   [Parameters](#parameters-4)
 -   [extractOnlyMeals](#extractonlymeals)
+    -   [Parameters](#parameters-5)
 
 #### getDataProviders
 
 Returns data providers.
 
-**Parameters**
+##### Parameters
 
 -   `dataprovidersJsonUrl` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** url for the data providers json. Defaults to <https://raw.githubusercontent.com/Orebrokommun/Open-Meal-Information/master/dataproviders.json> as per <https://orebrokommun.github.io/Open-Meal-Information/doc/list-data-providers.html>
 
@@ -62,7 +68,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 Returns the data provider with <code>name === 'Skolmaten'</code>.
 
-**Parameters**
+##### Parameters
 
 -   `dataprovidersJsonUrl` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** url for the data providers json. Defaults to <https://raw.githubusercontent.com/Orebrokommun/Open-Meal-Information/master/dataproviders.json> as per <https://orebrokommun.github.io/Open-Meal-Information/doc/list-data-providers.html>
 
@@ -72,7 +78,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 Returns distributors from a data provider.
 
-**Parameters**
+##### Parameters
 
 -   `dataprovider` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** data provider object to fetch distributors from.
     -   `dataprovider.baseUrl` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** <code>baseUrl</code> of the data provider.
@@ -83,7 +89,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 Filters distributors based on partial name and/or partial address.
 
-**Parameters**
+##### Parameters
 
 -   `options` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     -   `options.distributors` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)** current distributors to filter, for example from <code>getDistributors</code> or the result of previous call to this function.
@@ -96,7 +102,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 Fetches meals for a distributor.
 
-**Parameters**
+##### Parameters
 
 -   `options` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** 
     -   `options.dataprovider` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** data provider object to fetch distributors from.
@@ -112,7 +118,7 @@ Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/
 
 Extracts an array of only meals objects from a response from <code>getMeals()</code>.
 
-**Parameters**
+##### Parameters
 
 -   `response` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** response from calling <code>getMeals()</code>.
 

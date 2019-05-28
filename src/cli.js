@@ -1,4 +1,4 @@
-import {basename, relative} from 'path'
+import { basename, relative } from 'path'
 import {
   getDataProviders,
   getDistributors,
@@ -41,8 +41,8 @@ const action = () => {
     return getDataProviderSkolmaten()
       .then(
         skolmaten => getDistributors(skolmaten)
-          .then(distributors => filterDistributors({distributors, ...HARDCODED_DISTRIBUTORS_FILTER}))
-          .then(distributors => getMeals({dataprovider: skolmaten, distributor: distributors[0]}))
+          .then(distributors => filterDistributors({ distributors, ...HARDCODED_DISTRIBUTORS_FILTER }))
+          .then(distributors => getMeals({ dataprovider: skolmaten, distributor: distributors[0] }))
           .then(extractOnlyMeals)
       )
   } else {

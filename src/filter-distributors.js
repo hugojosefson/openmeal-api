@@ -5,11 +5,11 @@ const stringIncludes =
           l(originalName).includes(l(partialName))
 
 const addressIncludes =
-    ({addressRegion, addressLocality}) => partialAddress =>
+    ({ addressRegion, addressLocality }) => partialAddress =>
       l(addressRegion).includes(l(partialAddress)) ||
         l(addressLocality).includes(l(partialAddress))
 
-const filterDistributors = ({distributors, name, address}) => distributors
+const filterDistributors = ({ distributors, name, address }) => distributors
   .filter(distributor => (typeof name === 'undefined' ? true : stringIncludes(distributor.name)(name)))
   .filter(distributor => (typeof address === 'undefined' ? true : addressIncludes(distributor.address)(address)))
 

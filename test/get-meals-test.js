@@ -13,7 +13,7 @@ import {
 describe('getMeals', () => {
   it('makes a request successfully', () => getDataProviderSkolmaten()
     .then(skolmaten => getDistributors(skolmaten)
-      .then(distributors => filterDistributors(({distributors, name: 'Kungshög', address: 'Malmö'}))
+      .then(distributors => filterDistributors(({ distributors, name: 'Kungshög', address: 'Malmö' }))
         .then(filteredDistributors => {
           assert.ok(Array.isArray(filteredDistributors))
           assert.ok(filteredDistributors.length === 1)
@@ -28,7 +28,7 @@ describe('getMeals', () => {
           .then(extractOnlyMeals)
           .then(meals => {
             assert.ok(Array.isArray(meals))
-            assert.equal(meals.length, 6)
+            assert.strict.equal(meals.length, 6)
           })
         )
       )

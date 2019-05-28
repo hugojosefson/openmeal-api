@@ -1,7 +1,7 @@
 /* eslint-env mocha */
 
 import assert from 'assert'
-import {getDataProviders} from '../src/api'
+import { getDataProviders } from '../src/api'
 
 describe('getDataProviders', () => {
   it('should return a Promise when called', () =>

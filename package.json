@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "API module for accessing school lunch menus from skolmaten.se",
   "main": "src/api-commonjs.js",
-  "module": "src/api.mjs",
+  "module": "src/api.js",
   "files": [
     "bin",
     "src"
@@ -14,13 +14,12 @@
   "scripts": {
     "start": "bin/openmeal-api.js",
     "test": "run-s lint mocha",
-    "mocha": "mocha --require @std/esm 'test/**/*-test.{m,}js'",
-    "mocha-watch": "mocha --watch --require @std/esm 'test/**/*-test.{m,}js'",
+    "mocha": "mocha --require esm 'test/**/*-test.{m,}js'",
+    "mocha-watch": "mocha --watch --require esm 'test/**/*-test.{m,}js'",
     "lint": "standard",
     "lint-fix": "standard --fix",
     "prepare": "run-s documentation",
-    "documentation": "documentation readme --section=API --shallow --format=md src/api.mjs",
-    "precommit": "lint-staged"
+    "documentation": "documentation readme --section=API --shallow --format=md src/api.js"
   },
   "lint-staged": {
     "*.{mjs,js,jsx}": [
@@ -45,23 +44,26 @@
   "license": "ISC",
   "comment-engines.node": "Not using babel, code seems to work from v6.2.2 and up.",
   "engines": {
-    "node": "^6.2.2 || 8.*"
+    "node": "^6.2.2 || ^8.13.0 || >=10.0.0"
   },
-  "comment-@std/esm.cjs": "Allow destructuring import from common-js modules.",
-  "@std/esm": "cjs",
   "devDependencies": {
-    "documentation": "^5.4.0",
-    "husky": "^0.14.3",
-    "lint-staged": "^6.1.1",
-    "mocha": "^5.0.1",
+    "documentation": "^11.0.0",
+    "husky": "^2.3.0",
+    "lint-staged": "^8.1.7",
+    "mocha": "^6.1.4",
     "npm-run-all": "^4.1.2",
-    "standard": "^11.0.0"
+    "standard": "^12.0.1"
   },
   "dependencies": {
-    "@std/esm": "^0.25.2",
     "engine-check": "^1.0.1",
-    "ramda": "^0.25.0",
+    "esm": "^3.2.25",
+    "ramda": "^0.26.1",
     "request": "^2.83.0",
     "request-promise-native": "^1.0.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   }
 }
