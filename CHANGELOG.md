@@ -9,6 +9,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 _New unreleased changes are listed here, and moved down to a release number when released._
 
-### Created - 2018-02-20
+## [2.0.0] - 2019-05-29
+
+### Security
+
+- Upgraded dependencies.
+- Require newer versions of Node.js.
+
+## [1.0.2] - 2018-03-07
+
+### Created
 
 - Set up based on [@hugojosefson/nodejs-example-cli](https://github.com/hugojosefson/nodejs-example-cli).
