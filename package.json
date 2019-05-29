@@ -42,9 +42,9 @@
   ],
   "author": "Hugo Josefson <hugo@josefson.org> (https://www.hugojosefson.com/)",
   "license": "ISC",
-  "comment-engines.node": "Not using babel, code seems to work from v6.2.2 and up.",
+  "comment-engines.node": "Not using babel, code seems to work from v6.9.0 and up.",
   "engines": {
-    "node": "^6.2.2 || ^8.13.0 || >=10.0.0"
+    "node": "^6.9.0 || ^8.13.0 || >=10.0.0"
   },
   "devDependencies": {
     "documentation": "^11.0.0",
