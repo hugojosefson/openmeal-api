@@ -28,7 +28,7 @@ describe('getMeals', () => {
           .then(extractOnlyMeals)
           .then(meals => {
             assert.ok(Array.isArray(meals))
-            assert.strict.equal(meals.length, 6)
+            assert.ok(meals.length > 2)
           })
         )
       )
