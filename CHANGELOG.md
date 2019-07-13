@@ -9,6 +9,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 _New unreleased changes are listed here, and moved down to a release number when released._
 
+## [2.0.2] - 2019-07-13
+
+### Security
+
+- Upgraded dependencies.
+
+### Changed
+
+- More lenient test to increase chance of passing.
+
 ## [2.0.1] - 2019-06-14
 
 ### Changed
