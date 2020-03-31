@@ -15,7 +15,7 @@ Information as specified at
 
 ## Prerequisite
 
-Node.js, at least `v8.13.0`.
+Node.js, at least `v10.13.0`.
 
 Recommended to install latest via [nvm](https://github.com/creationix/nvm#readme):
 

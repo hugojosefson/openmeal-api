@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 _New unreleased changes are listed here, and moved down to a release number when released._
 
+### Security
+
+- Upgrade dependencies.
+
+### Breaking
+
+- Stop supporting Node.js `8`; require Node.js `^10.13.0 || >=11.10.1`.
+
 ## [2.0.2] - 2019-07-13
 
 ### Security
