@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 _New unreleased changes are listed here, and moved down to a release number when released._
 
+## [3.0.1] - 2020-06-06
+
+### Security
+
+- Upgrade dependencies.
+
 ## [3.0.0] - 2020-03-31
 
 ### Security
