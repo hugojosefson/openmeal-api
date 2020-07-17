@@ -44,7 +44,7 @@
   "license": "ISC",
   "comment-engines.node": "Not using babel, code seems to work from v10.13.0 and up.",
   "engines": {
-    "node": "^10.13.0 || ^11.10.1 || ^12 || >=13.7"
+    "node": "^10.13.0 || >=11.10.1"
   },
   "devDependencies": {
     "documentation": "^13.0.1",
