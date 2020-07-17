@@ -9,6 +9,24 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 _New unreleased changes are listed here, and moved down to a release number when released._
 
+## [3.0.4] - 2020-07-17
+
+### Fixed
+
+- Revert dependency upgrades from 3.0.3. Re-releasing as 4.0.0.
+
+## [3.0.3] - 2020-07-17
+
+### Changed
+
+- Upgrade dependencies.
+
+## [3.0.2] - 2020-07-17
+
+### Security
+
+- Upgrade lodash.
+
 ## [3.0.1] - 2020-06-06
 
 ### Security
