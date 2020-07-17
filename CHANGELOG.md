@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 _New unreleased changes are listed here, and moved down to a release number when released._
 
+## [4.0.0] - 2020-07-17
+
+### Breaking
+
+- Stop supporting Node.js `>=13.0.0 <13.7`; require Node.js `10.13.0 || ^11.10.1 || ^12 || >=13.7`.
+
 ## [3.0.4] - 2020-07-17
 
 ### Fixed
